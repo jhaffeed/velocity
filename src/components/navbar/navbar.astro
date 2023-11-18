@@ -1,0 +1,136 @@
+---
+import ContainerSticky from "@components/container-sticky.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import aidxnLogo from 'assets/aidxn/aidxn-23-logo.svg'; 
+
+
+const menuitems = [
+  {
+    title: "Design",
+    path: "/brand-strategy",
+  },
+  {
+    title: "Develop",
+    path: "/web-design",
+  },
+  {
+    title: "Market",
+    path: "/marketing",
+  },
+  {
+    title: "Moonshot",
+    path: "/moonshot-plan",
+  },
+];
+---
+<!--
+ children: [
+{ title: "Web Design", path: "/web-design" },
+{ title: "Velocity", path: "/velocity" },
+{ title: "Shopify", path: "/shopify" },
+{ title: "Wordpress", path: "/wordpress" },
+], -->
+<style>
+  #navLogo { height: 60px; margin: 15px auto; } 
+  @media only screen and (max-width: 1199px) {
+    #navLogo {
+      height: 45px;
+    }
+  }
+  #navTitle { border: 0.5px; }
+  #navTitle:hover { border:2px; }
+  header { background: rgba(255, 255, 255); backdrop-filter: blur(60px); border-bottom: 0.5px solid rgb(0, 0, 0); }
+  .dashboard-button {display: none;}
+</style>
+
+<ContainerSticky>
+  <header class="flex flex-col lg:flex-row justify-between items-center mb-4 px-2 md:px-6 lg:px-8">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="">
+          <img id="navLogo" loading="eager" src={aidxnLogo} alt="Aidxn Design - Code by Aiden Wood"/>
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-6 h-6 pr-2 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="text-xs xl:text-sm hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-4">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a id="navTitle"
+                      href={item.path}
+                      class="flex lg:px-3 py-2 text-black hover:text-gray-700"
+                    >
+                      
+                        {item.title}
+                      
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+
+        <div class="text-sm lg:hidden flex items-center my-3 gap-4">
+          <Link style="inverted" data-netlify-identity-button block size="md"></Link>
+          <a href="https://aidxn.com/dashboard" class="dashboard-button hidden">Dashboard</a>
+          <Link href="https://g2ok5807scs.typeform.com/to/tCmzlDza" size="md" block>Book</Link>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div>
+      <div class="text-sm hidden lg:flex items-center gap-4">
+        <Link style="inverted" data-netlify-identity-button size="md"></Link>
+        <a href="https://aidxn.com/dashboard" class="dashboard-button hidden">Dashboard</a>
+        <Link href="https://g2ok5807scs.typeform.com/to/tCmzlDza" size="md">Book</Link>
+      </div>
+    </div>
+  </header>
+</ContainerSticky>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+  on.mounted(() => {
+    const netlifyIdentity = window.netlifyIdentity;
+    netlifyIdentity.init();
+
+    function showDashboardButton() {
+      console.log('showDashboardButton is running');
+      const user = netlifyIdentity.currentUser();
+      const dashboardButtons = document.querySelectorAll('.dashboard-button');
+
+      if (user) {
+        dashboardButtons.forEach(button => {
+          button.style.display = 'flex';
+        });
+      } else {
+        dashboardButtons.forEach(button => {
+          dashboardButtons.forEach(button => {
+            button.style.display = 'none';
+          });
+        });
+      }
+    }
+
+    showDashboardButton();
+    netlifyIdentity.on('login', showDashboardButton);
+    netlifyIdentity.on('logout', showDashboardButton);
+  });
+</script>
+

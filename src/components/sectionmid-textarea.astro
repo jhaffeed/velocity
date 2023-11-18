@@ -1,0 +1,69 @@
+---
+
+---
+<main class="my-8 md:my-16">
+<div id="titleContainer" class="mt-16 pb-8 flex flex-col md:flex-row justify-start items-center">
+  <div id="leftContainer" class="w-full md:w-1/2 px-4 md:px-8">
+    <h5 class="text-xs md:text-sm lg:text-md my-4 text-slate-700">
+      <slot name="smltitle">Aidxn Design</slot>
+    </h5>
+    <h3 class="text-2xl md:text-3xl lg:text-5xl font-bold lg:tracking-tight">
+      <slot name="title">Title</slot>
+    </h3>
+    <p class="text-sm lg:text-lg max-w-3xl mt-4 text-slate-700">
+      <slot name="desc">Some description goes here</slot>
+    </p>
+  </div>
+  <div id="rightContainer" class="w-full md:w-1/2 px-4 md:px-8">
+    <slot class="bg-grey-700 rounded" name="cover"></slot>
+  </div>
+</div>
+<div class="my-8 flex flex-col md:flex-row">
+  <div id="leftContainer" class="w-full md:w-1/2 my-4 px-4 md:px-8">
+    <div class="mt-1 mb-4 p-4">
+      <slot name="iconleft"></slot>
+    </div>
+    <h4 class="text-2xl lg:text-3xl font-semibold lg:tracking-tight">
+      <slot name="titleleft">Title</slot>
+    </h4>
+    <p class="text-sm sm:text-md max-w-3xl mt-4 text-slate-700 pr-4 md:pr-8">
+      <slot name="textleft">Some description goes here</slot>
+    </p>
+  </div>
+  <div id="rightContainer" class="w-full md:w-1/2 my-4 px-4 md:px-8">
+    <div class="mt-1 mb-4 p-4">
+      <slot name="iconright"></slot>
+    </div>
+    <h4 class="text-2xl lg:text-3xl font-semibold lg:tracking-tight">
+      <slot name="titleright">Title</slot>
+    </h4>
+    <p class="text-sm sm:text-md max-w-3xl mt-4 text-slate-700 pr-4 md:pr-8">
+      <slot name="textright">Some description goes here</slot>
+    </p>
+  </div>
+</div>
+<div class="my-8 flex flex-col md:flex-row">
+  <div id="leftContainer" class="w-full md:w-1/2 my-4 px-4 md:px-8">
+    <div class="mt-1 mb-4 p-4">
+      <slot name="iconleft2"></slot>
+    </div>
+    <h4 class="text-2xl lg:text-3xl font-semibold lg:tracking-tight">
+      <slot name="titleleft2">Title</slot>
+    </h4>
+    <p class="text-sm sm:text-md max-w-3xl mt-4 text-slate-700 pr-4 md:pr-8">
+      <slot name="textleft2">Some description goes here</slot>
+    </p>
+  </div>
+  <div id="rightContainer" class="w-full md:w-1/2 my-4 px-4 md:px-8">
+    <div class="mt-1 mb-4 p-4">
+      <slot name="iconright2"></slot>
+    </div>
+    <h4 class="text-2xl lg:text-3xl font-semibold lg:tracking-tight">
+      <slot name="titleright2">Title</slot>
+    </h4>
+    <p class="text-sm sm:text-md max-w-3xl mt-4 text-slate-700 pr-4 md:pr-8">
+      <slot name="textright2">Some description goes here</slot>
+    </p>
+  </div>
+</div>
+</main>

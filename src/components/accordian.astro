@@ -1,0 +1,195 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+
+import GraphicDesign from '../assets/aidxn/trig.svg';
+import WebDesign from '../assets/aidxn/sqr.svg';
+import Marketing from '../assets/aidxn/poly.svg';
+import VideoProd from '../assets/aidxn/hex.svg';
+
+---
+
+
+<style>
+  
+  @keyframes slideIn {
+      0% {
+          transform: translateY(3rem);
+          opacity: 0;
+      }
+      100% {
+          transform:translateY(0rem);
+          opacity: 1;
+      }
+      0% {
+          transform: translateY(1rem);
+          opacity: 0;
+      }
+  }
+  @-webkit-keyframes slideIn {
+      0% {
+          -webkit-transform: transform;
+          -webkit-opacity: 0;
+      }
+      100% {
+          -webkit-transform: translateY(0);
+          -webkit-opacity: 1;
+      }
+      0% {
+          -webkit-transform: translateY(3rem);
+          -webkit-opacity: 0;
+      }
+  }
+</style>
+
+
+<main class="my-16 md:my-32">
+  <div id="introContainer" class="mb-4 md:mb-8">
+    <h5 class="text-sm lg:text-md text-slate-700 mb-2">
+      Velocity Details
+    </h5>
+    <h3 class="text-2xl md:text-3xl lg:text-5xl mb-4 font-bold lg:tracking-tight">
+      Frequently Asked Questions.
+    </h3>
+    
+  </div>
+
+
+
+
+
+  <section x-data="slider()">
+    <div class="">
+        <div class="bg-white border border-gray-200" x-data="{selected:1}">
+
+            <ul class="shadow-box">
+
+                <li class="relative border-b border-gray-200">
+                    <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
+                        <div class="flex items-center justify-between text-xl font-semibold">
+                            <span>
+                                Pay Once, Own Forever. No Hidden Fees.
+                            </span>
+                            <span class="ico-plus"></span>
+                        </div>
+                    </button>
+      
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                        <div class="p-6 gap-y-4">
+                            <p>Say goodbye to endless subscriptions and expensive hosting. We believe you and your business should truly own your website. Velocity is designed to be able to be managed and understood by even a junior Wordpress developer, keeping your future development costs down. Pay once to have Velocity installed and customised to your business before having the code and assets completely released to your team. That doesn't mean we leave you in the dark however. With 6 months of SEO management included free with all Velocity packages, keeping and eye and making minor improvements during the months following launch.</p>
+                            <p>With GST-inclusive pricing to help your business understand your costs from the start and never have that awkward conversation with your boss again. We've been in plenty of business decisions where GST inclusions were overlooked and they always feel like a backstabbing pain. All additionals and future code / graphic design work are offered at extremely competitive rates in comparison to industry and level of experience. Future graphic design one-off hourly work rate at $60/hr and web design / development one-off hourly rate work at $90/hr.</p>
+                        </div>
+                    </div> 
+                </li>
+          
+                <li class="relative border-b border-gray-200">
+                    <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
+                        <div class="flex items-center justify-between text-xl font-semibold">
+                            <span>
+                                How does Velocity run without Hosting?    
+                            </span>
+                            <span class="ico-plus"></span>
+                        </div>
+                    </button>
+      
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+                        <div class="p-6">
+                            <p>Velocity runs on a serverless architecture allowing you to save thousands of dollars a year in hosting for high traffic sites. Scale to a global capacity easily with CDN networks and never need to fall into the expensive grips of outsourced server rental, compute and hosting. Velocity's base is written in Astro, completely compatible with any javascript framework and NPM. This allows your site to easily offer the experiences your customers demand now and in the future. This means that after the one-off cost of Velocity, your only other cost to run your websites will be your domain name registration.</p>
+                        </div>
+                    </div>  
+                </li>
+          
+                <li class="relative border-b border-gray-200">
+                    <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
+                        <div class="flex items-center justify-between text-xl font-semibold">
+                            <span>
+                                Can I edit my Velocity website myself?    
+                            </span>
+                            <span class="ico-plus"></span>
+                        </div>    
+                    </button>
+      
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
+                        <div class="p-6">
+                            <p>We understand why a lot of clients still want to use website builders like Wordpress and Canva, but a lot of the time it will just never do the trick to generate a single lead. Usually simply causing a brand harm. Velocity was designed and developed with the end customer in mind and their ability to cheaply maintain their site well into the future, after our team have customised the site intially to your liking. Wordpress developers have worked for years mostly with tools such as Divi and Elementor. Velocity's low-code design is shaped around the fundamentals that have been learned here. Shopify and Webflow builders will also feel very comfortable with code maintaining. Allowing even the most junior developer to quickly create effective, high-conversion web pages with out us if need be. Even though we are always just a phone call away for all Velocity clients.</p>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="relative border-b border-gray-200">
+                    <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+                        <div class="flex items-center justify-between text-xl font-semibold">
+                            <span>
+                                Can Velocity work with Shopify?    
+                            </span>
+                            <span class="ico-plus"></span>
+                        </div>    
+                    </button>
+      
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                        <div class="p-6">
+                            <p>Velocity can be used in-front of Shopify Storefronts, allowing for the ability to create extremely professional, fully custom website experiences for landing pages rapidly and cost-effectively. Shopify is recommended to clients when their business already exceeds $4,000 / month in revenue, reliable with no sales. Before this point, Velocity is recommended to clients to completely take the wheel and save you money while your business is fragile. With better SEO ability and image compression built-in on par with Shopify's image engine, Velocity is the perfect partner to businesses selling in global markets needing more flexibility with their landing pages and product / service documentation.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="relative border-b border-gray-200">
+                    <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 5 ? selected = 5 : selected = null">
+                        <div class="flex items-center justify-between text-xl font-semibold">
+                            <span>
+                                Can Velocity work with Wordpress?    
+                            </span>
+                            <span class="ico-plus"></span>
+                        </div>    
+                    </button>
+      
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container5" x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
+                        <div class="p-6">
+                            <p>Velocity was developed at the start to make it easier for me to offer clients a way out of Wordpress. Years later and unfortunately I'm still getting asked by clients if they can keep their Wordpress website, and I explain the long list of SEO and performance deficiencies that impose on your rankings and run up the costs of running larger business websites / storefronts. Built on Web3, Velocity doesn't require any expensive hosting or performance optimising plugins, it comes standard with no bloat. Also included with over 30 integrations which are all similar to your favourite WP plugins you would see powering most sites. Everything you're wanting from Wordpress we can promise has been built in and bettered with Velocity to make this exact question an easy one. Get started today with the pricing plan that fits a migration of your current Wordpress website and you'll be laughing in under 21 days. For any website migration from Wordpress that is larger pages and products wise, just book in a call.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="relative border-b border-gray-200">
+                    <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 6 ? selected = 6 : selected = null">
+                        <div class="flex items-center justify-between text-xl font-semibold">
+                            <span>
+                                What we will need from you.
+                            </span>
+                            <span class="ico-plus"></span>
+                        </div>    
+                    </button>
+      
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container6" x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
+                        <div class="p-6">
+                            <p>When you purchase a Velocity package, your Velocity website will be customised by our team and revised numerous times. We do our best to only ask for a single page of information from your end. An email address for leads to go to, a single paragraph of website text to expand upon with your tone, and some questions on what your want most from your site functionality and design. From here we will keep you posted with notifications through Asana that mostly will require no input from your end, but just to be informative on progress. Any Asana requests that require your input will be clearly labelled and notified in the 'For Approval' section. Velocity has been designed to be a solution for all common digital business needs, with no need from development by your team by to also easily allow for future development by anyone.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="relative border-b border-gray-200">
+                    <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 7 ? selected = 7 : selected = null">
+                        <div class="flex items-center justify-between text-xl font-semibold">
+                            <span>
+                                Is Velocity only open to Moonshot customers.
+                            </span>
+                            <span class="ico-plus"></span>
+                        </div>    
+                    </button>
+      
+                    <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container7" x-bind:style="selected == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : ''">
+                        <div class="p-6">
+                            <p>Short and sweet, no. Velocity is a one-off product and service that we hope offers a great way for businesses to see just how quickly we can take your business further than other agencies ever have. If you'd like marketing management that genuinely doesn't muck around, please do look into our Moonshot Plan.</p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+          </div>
+        </div>
+  </section>
+</main>
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

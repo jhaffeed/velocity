@@ -1,0 +1,133 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+import { Picture } from "@astrojs/image/components";
+import Bill from '../assets/previous-works/br/br-bill.webp';
+import Gwd1 from '../assets/previous-works/br/br-gwd.webp';
+import Gwd2 from '../assets/previous-works/br/br-gwd2.webp';
+import Bus from '../assets/previous-works/br/br-bus.webp';
+import Re from '../assets/previous-works/br/br-re.webp';
+
+import FB from '../assets/previous-works/br/br-fb.webp';
+import Vox from '../assets/previous-works/br/br-vox.webp';
+import Weather from '../assets/previous-works/br/br-wth.webp';
+
+
+const services = [
+  {
+    imgsrc: Bill,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+  {
+    imgsrc: Bus,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+  {
+    imgsrc: Re,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+  {
+    imgsrc: Gwd1,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+  {
+    imgsrc: Gwd2,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+  {
+    imgsrc: FB,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+  {
+    imgsrc: Vox,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+  {
+    imgsrc: Weather,
+    imgalt: "Advertising with Google for free through organic SEO improvements.",
+  },
+];
+---
+
+<!-- Flickity -->
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<!-- Flickity Custom Styles -->
+<style>
+
+.carousel-cell {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+  }
+
+  /* Start Flickity viewport safeguards V4 */
+  main { max-width: 100%; }
+  .flickity-viewport { margin: 0 auto; }
+  .ball-carousel, .flickity-viewport { max-width: 100vw !important; }
+  .ball-carousel { height: fit-content; }
+  /* End Flickity viewport safeguards V4 */
+
+  #works-row { border: black; border-top: ridge; }
+
+  </style>
+
+<main id="works-row" class="mt-12 md:mt-24 pb-8">
+  <div class="py-8 flex flex-row items-start sm:items-center justify-between">
+    <div>
+      <h5 class="text-xs md:text-sm lg:text-md text-slate-700">
+        Moonshot Plan
+      </h5>
+      <h4 class="text-2xl md:text-3xl lg:text-5xl my-2 font-bold lg:tracking-tight">
+        Ball Realty.
+      </h4>
+    </div>
+    <div class="my-6">
+      <Link 
+        class="text-xs md:text-sm"
+        href="/case-ballrealty"
+        style="outline">
+        View Case Study
+      </Link>
+    </div>
+  </div>
+
+<div id="sliderContainer" class="ball-carousel grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-16 md:gap-8">
+  {
+    services.map((item) => (
+      <div class="carousel-cell flex flex-row justify-start items-center w-full">
+        <Picture
+              src={item.imgsrc}
+              sizes="(max-width: 1680px) 1680px, 1260px, 840px"
+              widths={[840, 1260, 1680]}
+              aspectRatio="5:3"
+              loading="lazy"
+              background="#f2f2f200"
+              fit="cover"
+              position="center"
+              class="w-full h-full rounded-md"
+            />
+      </div>
+    ))
+  }
+</div>
+</main>
+
+<script>
+  // element argument can be a selector string
+  //   for an individual element
+  var flkty = new Flickity( '.ball-carousel', {
+  cellAlign: 'left',
+  contain: true,
+  freeScroll: true,
+  prevNextButtons: false,
+  pageDots: true
+  // lower attraction and lower friction
+  // slower transitions
+  // easier to flick past cells
+  });
+</script>
+

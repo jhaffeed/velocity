@@ -1,0 +1,127 @@
+---
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import WebDesign from '../assets/aidxn/sqr.svg';
+
+
+const sliderContent = [
+  {
+    icon: WebDesign,
+    category: "Web Design",
+    title: "Velocity - Small",
+    paragraph: "Get a new website you're truly proud of, that generates more leads and reduces ad costs through web performance. No hosting costs. Pay once, own forever.",
+    inclusions: [
+      "6x page custom web design",
+      "Powered by Velocity",
+      "2x mock up revisions",
+      "DNS and domain setup",
+      "6 months of SEO optimisation",
+      "6hrs of design work included",
+      "21 day turnaround",
+      "Pay once, own forever",
+    ],
+    btntxt: "Get started",
+    price: "2445",
+    style: "outline",
+    link: "https://buy.stripe.com/9AQ4hPbLt457532fZ5",
+  }
+]
+---
+
+
+
+<style>
+  
+  [astro-icon="bgIcon"] {
+        color: #a600ff10;
+        /* OR */
+        fill: #a600ff10;
+  }
+</style>
+
+
+<main class="my-8 md:my-16">
+<div id="heroSection" class="flex flex-col md:flex-row justify-center items-center">
+  
+  <div id="leftContainer" class="w-full md:w-3/5 px-4 md:px-8">
+
+    <div class="py-6">
+      <h5 class="text-xs md:text-sm lg:text-md my-4 text-slate-700">
+        Conversion-focused design
+      </h5>
+      <h3 style="heroTagline" class="text-2xl md:text-3xl lg:text-5xl max-w-3xl w-full font-bold tracking-tight">
+        Generate leads faster + cheaper.
+      </h3>
+      <p class="text-sm lg:text-lg mt-4 pr-8 text-slate-700 w-full lg:max-w-3xl">
+        Velocity has been designed and developed to reduce all costs around digital business. 
+        Compete online and break new SEO ranks with ease, thanks to cutting-edge web performance. 
+        Includes everything a business needs for online success, without the bloat.
+      </p>
+      
+      <div class="mt-6 flex flex-col sm:flex-row justify-start gap-3">
+        <a href="https://aidxn.com/velocity/" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800 border-2 border-transparent flex gap-1 items-center justify-center">
+          <svg viewBox="0 0 24 24" class="w-4 h-4">
+            <Icon class="text-white" name="ph:lightning-fill" />
+          </svg>
+
+          Velocity Theme
+
+        </a>
+        <a href="https://g2ok5807scs.typeform.com/to/tCmzlDza" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white border-2 border-black hover:bg-gray-100 text-black flex gap-1 items-center justify-center">
+          <svg viewBox="0 0 24 24" class="w-4 h-4">
+            <Icon class="text-black" name="ph:chat-teardrop-dots-light" />
+          </svg>
+          
+          Book a Call
+
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="rightContainer" class="w-full md:w-2/5 p-4 my-4 z-5">
+
+
+    <div class="w-full h-full">
+      { sliderContent.map((item) => (
+        <div id="glass-card" class="carousel-cell w-fit py-32">
+          <div id="slideContainer" class="flex flex-col gap-y-4">
+            <div id="iconContainer" class="w-16 lg:w-24">
+              <img src={item.icon} class="" />
+            </div>  
+            <div id="textContainer" class="w-full flex flex-col gap-y-2">
+              <span class="text-slate-700 text-xs md:text-sm lg:text-md mr-3 font-thin uppercase text-md">{item.category}</span>
+              <h4 class="font-semibold text-2xl md:text-3xl lg:text-4xl">{item.title}</h4>{" "}
+              <p class="text-xs lg:text-sm max-w-3xl font-regular text-slate-700 leading-relaxed">{item.paragraph}</p>
+              <div class="my-6">
+                <b class="lg:text-sm text-md mb-4">Includes:</b>
+                <ul class="grid grid-cols-2 gap-x-4 gap-y-2 pt-2">
+                  {item.inclusions.map((inclusion) => (
+                    <li class="text-xs text-slate-700 mb-1">{inclusion}</li>
+                  ))}
+                </ul>
+              </div>
+              <div class="flex flex-col sm:flex-row justify-between">
+                <p class="text-xl lg:text-2xl font-semibold text-black cursor-auto my-4">from ${item.price}<span class="text-lg lg:text-2xl font-normal"></span></p>
+                <p class="text-slate-500 my-4 leading-relaxed">
+                  <Link 
+                    class="mr-4"
+                    href={item.link || "#"}
+                    block
+                    style={item.style ? "primary" : "outline"}>
+                    {item.btntxt || "Get Started"}
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        ))
+      }
+    </div>
+
+
+  </div>
+</div>
+
+</main>

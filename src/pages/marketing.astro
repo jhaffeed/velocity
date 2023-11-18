@@ -1,0 +1,208 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ContainerFW from "@components/container-fullwidth.astro";
+import ContainerXL from "@components/container-xl.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionmid.astro";
+import SectionEmail from "@components/sectionhead-email.astro";
+import Integrations from "@components/logos-integrations.astro";
+import MoonshotHero from "@components/sectionmid-singleproduct-moonshot.astro";
+import Cta from "@components/cta.astro";
+import SectionHeadImg from "@components/sectionhead-img.astro";
+import SectionHeadSecImg from "@components/sectionhead-img-rev.astro";
+import SectionTextarea from "@components/sectionmid-textarea.astro";
+import GallerySlider from "@components/slider-lrg-services-marketing.astro";
+import { Picture } from "@astrojs/image/components";
+import PagecoverHero from '../assets/products-sqr/bus-ad-management.webp';
+import Pagecover from '../assets/backgrounds/balance.webp';
+import PagecoverSecondary from '../assets/backgrounds/funnel.webp';
+import CoverTextarea from '../assets/backgrounds/cubed.webp';
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Marketing Strategy Optimisation + Automation for Lead Generation">
+
+  <ContainerFW>
+    <SectionEmail>
+      <Fragment slot="title">
+        Marketing Strategy Optimisation + Automation for Lead Generation.
+      </Fragment>
+      <Fragment slot="desc">      
+        The seemless solution for web design, development, and marketing all-in-one with Aidxn Design. 
+        Say goodbye to profit-sucking marketing agencies with a single, reliable point of communication and expertise. 
+        From innovative strategies to seamless execution, we deliver exceptional results that drive business online.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={PagecoverHero}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionEmail>
+  </ContainerFW>
+
+  <ContainerXL>
+    <SectionHeadImg>
+      <Fragment slot="title">
+        Search engine marketing professionals.
+      </Fragment>
+      <Fragment slot="desc">
+        Looking to maximize your online visibility? Look no further than Aidxn Design, the go-to solution 
+        for search engine marketing professionals. We optimize websites with a deep dive on SEM/SEO tactics 
+        to find the right traffic for your business. Unmatched SEM solutions, ready for the AI search revolution.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={Pagecover}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadImg>
+  </ContainerXL>
+
+  <ContainerXL>
+    <SectionHeadSecImg>
+      <Fragment slot="title">
+        Global marketing strategy management.
+      </Fragment>
+      <Fragment slot="desc">
+        Gain the experience from years of curating and managing global brand launches, to instant online success. 
+        Reliable digital marketing management on the Gold Coast with Aidxn Design. Our marketing managers are like 
+        mission control for your business, quickly identifying the areas of improvement over and over inside your brand. 
+        An outside set of eyes is always a necessesity in effective marketing design. Plus we will come to your GC business 
+        once a month in-person, for faster marketing strategy approval and content creation, when part of the <a href="/moonshot-plan">Moonshot Plan</a>.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={PagecoverSecondary}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadSecImg>
+
+    <Integrations />
+
+  </ContainerXL>
+
+  <ContainerXL>
+    <SectionTextarea>
+      <Fragment slot="title">Brand Conversion Optimisation.</Fragment>
+      <Fragment slot="desc">
+        Unlock the untapped potential of your brand with Aidxn Design's conversion optimization expertise. 
+        Our holistic approach optimizes conversion from every corner of your brand, transforming visitors 
+        into loyal customers. Through meticulous analysis, strategic enhancements, and seamless user 
+        experiences, we ignite a powerful synergy that elevates your brand's performance. Experience the 
+        transformative impact of our brand conversion optimization and unleash your brand's true potential.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={CoverTextarea}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+      <Fragment slot="iconleft">
+        <Icon class="w-16 h-16" name="simple-icons:zapier" />
+      </Fragment>
+      <Fragment slot="titleleft">
+        Zapier API
+      </Fragment>
+      <Fragment slot="textleft">
+        Zapier's powerful automation platform works directly
+        with Velocity7. Automate tasks, synchronize data, 
+        and reduce costs. All made simple with Velocity7 
+        API connection.
+      </Fragment>
+      <Fragment slot="iconright">
+        <Icon class="w-16 h-16" name="simple-icons:netlify" />
+      </Fragment>
+      <Fragment slot="titleright">
+        Netlify DNS & CDN
+      </Fragment>
+      <Fragment slot="textright">
+        All our Velocity sites are powered by Netlify's powerful, 
+        load-balancing network of servers to deliver your content 
+        to the end user faster than anyone else. Absolutely necessary
+        with the cell networks available in Australia. Take back control 
+        of your website's velocity with the speed of Velocity7 on Netlify's network.
+      </Fragment>
+      <Fragment slot="iconleft2">
+        <Icon class="w-16 h-16" name="simple-icons:googleads" />
+      </Fragment>
+      <Fragment slot="titleleft2">
+        GTM Conversion Tracking
+      </Fragment>
+      <Fragment slot="textleft2">
+        Maximize your advertising effectiveness with Google Ads' 
+        conversion tracking built deeply into Velocity7. Easily 
+        track and measure conversions that matter most to your 
+        business. Gain valuable insights into customer behavior 
+        and optimize your ad strategy accordingly. With Google Ads' 
+        comprehensive conversion tracking, you can make data-driven 
+        decisions and drive higher ROI for your advertising efforts.
+      </Fragment>
+      <Fragment slot="iconright2">
+        <Icon class="w-16 h-16" name="simple-icons:stripe" />
+      </Fragment>
+      <Fragment slot="titleright2">
+        Stripe Payments
+      </Fragment>
+      <Fragment slot="textright2">
+        Streamline your payment process and boost sales with Stripe's 
+        secure payment gateway. With one-click checkout, you can 
+        provide a seamless payment experience for your customers, 
+        reducing cart abandonment and driving conversions. Benefit 
+        from Stripe's transparent pricing, and robust fraud prevention 
+        from day one for your business. For frictionless payment experiences.
+      </Fragment>      
+    </SectionTextarea>
+  </ContainerXL>
+
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Monthly marketing optimisation that comes to you.</Fragment>
+      <Fragment slot="desc"
+        >Our Moonshot Plan is a month to month complete website and marketing management service. With only 10 spaces available, we aim to 
+        give businesses a real option for outsourcing marketing without losing control. We are serious about marketing data analysis and optimisation. 
+        Designed to take the least amount of your time as possible, while still easily recieving your input. $4445/month, Pause anytime.
+      </Fragment>
+    </Sectionhead>
+  </Container>
+
+  <ContainerXL>
+    <MoonshotHero />
+  </ContainerXL>
+
+
+  <Container>
+    <Cta />
+  </Container>
+
+  <ContainerFW>
+    <GallerySlider />
+  </ContainerFW>
+  
+</Layout>

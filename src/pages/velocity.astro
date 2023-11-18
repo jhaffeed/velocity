@@ -1,0 +1,338 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ContainerFW from "@components/container-fullwidth.astro";
+import ContainerXL from "@components/container-xl.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionmid.astro";
+import SectionEmail from "@components/sectionhead-email.astro";
+import Cta from "@components/cta.astro";
+import VelocityHero from "@components/hero-centered.astro";
+
+import SectionHeadImg from "@components/sectionhead-img.astro";
+import SectionHeadImgRev from "@components/sectionhead-img-rev.astro";
+import SectionTextarea from "@components/sectionmid-textarea.astro";
+import FeaturesGrid from "@components/grid-4x4-features.astro";
+import Pricing from "@components/pricing.astro";
+import Accordian from "@components/accordian.astro";
+import Integrations from "@components/logos-integrations.astro";
+import { Picture } from "@astrojs/image/components";
+import Pagecover from '../assets/backgrounds/balance.webp';
+import PagecoverSecondary from '../assets/backgrounds/funnel.webp';
+import CoverTextarea from '../assets/backgrounds/cubed.webp';
+import { Icon } from "astro-icon";
+
+
+const pricing = [
+
+  {
+    name: "Velocity - Small",
+    price: "$2445",
+    popular: false,
+    features: [
+      "2x 15-min video-call brand sessions",
+      "2x design revisions",
+      "4x web pages",
+      "6x graphic design assets",
+      "2x lead generation funnels",
+      "Small Storefront with 2 products",
+      "Domain & DNS setup",
+      "Velocity customised to your brand",
+      "Stripe payment processing",
+      "A+ SEO performance",
+      "Conversion tracking",
+      "Cookie-less tracking",
+      "Email handling",
+      "Automated lead notifications",
+      "0Auth user identity",
+      "CMS integration",
+      "Extendable with any NPM",
+      "Lifetime license",
+    ],
+    button: {
+      text: "Purchase",
+      link: "https://buy.stripe.com/7sIcOleXFgRTbrq4gg",
+    },
+  },
+  {
+    name: "Velocity - Medium",
+    price: 
+      "$3445",
+    popular: true,
+    features: [
+      "4x 15-min video-call brand sessions",
+      "4x design revisions",
+      "8x web pages and products",
+      "12x graphic design assets",
+      "4x lead generation funnels",
+      "Medium Storefront with 4 products",
+      "Domain & DNS setup",
+      "Velocity customised to your brand",
+      "Stripe payment processing",
+      "A+ SEO performance",
+      "Conversion tracking",
+      "Cookie-less tracking",
+      "Email handling",
+      "Automated lead notifications",
+      "0Auth user identity",
+      "CMS integration",
+      "Extendable with any NPM",
+      "Lifetime license",
+    ],
+    button: {
+      text: "Purchase",
+      link: "https://buy.stripe.com/28o15Dg1JfNPcvufZ6",
+    },
+  },
+  {
+    name: "Velocity - Large",
+    price: "$4445",
+    popular: false,
+    features: [
+      "8x 15-min video-call brand sessions",
+      "4x design revisions",
+      "24x web page and products",
+      "24x graphic design assets",
+      "8x lead generation funnels",
+      "Large Storefront with 8 products or services",
+      "Domain & DNS setup",
+      "Velocity customised to your brand",
+      "Stripe payment processing",
+      "A+ SEO performance",
+      "Conversion tracking",
+      "Cookie-less tracking",
+      "Email handling",
+      "Automated lead notifications",
+      "0Auth user identity",
+      "CMS integration",
+      "Extendable with any NPM",
+      "Lifetime license",
+    ],
+    button: {
+      text: "Purchase",
+      link: "https://buy.stripe.com/7sIaGd7vdgRT9jidRa",
+    },
+  },
+];
+---
+
+<Layout title="Better websites with Velocity">
+
+  <ContainerFW>
+    <VelocityHero />
+    <FeaturesGrid />
+  </ContainerFW>
+
+  <ContainerXL>
+    <Sectionhead>
+      <Fragment slot="smltitle">
+        Deploy
+      </Fragment>
+      <Fragment slot="title">Go live in 24 hours, finalised over 21 days.</Fragment>
+      <Fragment slot="desc" class="max-w-4xl">
+        We work fast to get an initial Velocity powered version 1 of your site live at a staging address, that way it can be accessed 
+        and revised easily on real devices by any memeber of the teams working on the project. Edit tickets are submitted and managed 
+        via any device easily using Asana.
+      </Fragment>
+    </Sectionhead>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mx-auto mt-12">
+      {pricing.map((item) => <Pricing plan={item} />)}
+    </div>
+  </ContainerXL>
+ 
+  <ContainerXL>
+    <SectionHeadImg>
+      <Fragment slot="smltitle">
+        Design
+      </Fragment>
+      <Fragment slot="title">
+        Making it easier to move to custom code.
+      </Fragment>
+      <Fragment slot="desc">
+        Velocity makes it easier to build out beautiful custom code websites, with a low-code design 
+        that anyone with experience with using Wordpress or Shopify will be comfortable understanding. 
+        Making it cheaper for businesses to have a more professional, blazing fast website. Pay once, own forever.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={Pagecover}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadImg>
+
+    <SectionHeadImgRev>
+      <Fragment slot="smltitle">
+        Development
+      </Fragment>
+      <Fragment slot="title">
+        Improved over 5 years, UX-focused.
+      </Fragment>
+      <Fragment slot="desc">
+        Packed with everything needed to generate more business online. 
+        SEO friendly components and integrations to boost conversions allows 
+        Velocity to generate leads for businesses in as little as 3 days.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={Pagecover}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadImgRev>
+
+  </ContainerXL>
+
+
+  <ContainerXL>
+    <SectionHeadImg>
+      <Fragment slot="smltitle">
+        Performance
+      </Fragment>
+      <Fragment slot="title">
+        0.2 second pageload + async loading.
+      </Fragment>
+      <Fragment slot="desc">
+        Velocity is kept on the cutting-edge of web performance and clients recieve all future component updates. 
+        Keeping your SEO perfect and optimal pageload performance and DNS routing, out-of-the-box. With PartyTown.js 
+        already integrated, adding extra weight like Meta Pixel, Google Analytics, and other libraries will never 
+        affect pageload times or SEO performance. Keeping customers happy and your brand being represented in the best 
+        light possible, on any device.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={PagecoverSecondary}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadImg>
+
+    <SectionHeadImgRev>
+      <Fragment slot="smltitle">
+        Pay-Once
+      </Fragment>
+      <Fragment slot="title">
+        Reducing the cost of digital business. 
+      </Fragment>
+      <Fragment slot="desc">
+        Pay for your site once and own your code forever. No more endless subscriptions no server costs whatsoever. The only other 
+        cost your website needs with Velocity is the yearly cost of your Domain and DNS ownership. 
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={PagecoverSecondary}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadImgRev>
+
+
+
+    <SectionTextarea>
+      <Fragment slot="smltitle">
+        Integrations
+      </Fragment>
+      <Fragment slot="title">Do more with your website.</Fragment>
+      <Fragment slot="desc">
+        Velocity 7 is a low-code framework that allows us to build websites faster than ever before. 
+        While maintaining high-performance and high-conversion rate through faster design iterations. 
+        Addressing the problems of website builders, while still feeling natural to use if you're experienced
+        with them. Pay once, own forever.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={CoverTextarea}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+      <Fragment slot="iconleft">
+        <Icon class="w-16 h-16" name="simple-icons:threedotjs" />
+      </Fragment>
+      <Fragment slot="titleleft">
+        Three.JS
+      </Fragment>
+      <Fragment slot="textleft">
+        Our absolute favourite website framework when it comes to getting creative is Three.JS.
+        If you've got 3D assets within your brand already that aren't being put to use online, 
+        you and your customer are missing out big time!
+      </Fragment>
+      <Fragment slot="iconright">
+        <Icon class="w-16 h-16" name="simple-icons:astro" />
+      </Fragment>
+      <Fragment slot="titleright">
+        Astro.JS
+      </Fragment>
+      <Fragment slot="textright">
+        We write all our code within an Astro-based framework to ensure the fastest possible pageload times, 
+        while also giving us to almost magical ability to work with any framework or code language you need.
+        Integrate a React or Vue component? No problemo. Back-end API's in any language? Already sorted.
+      </Fragment>
+      <Fragment slot="iconleft2">
+        <Icon class="w-16 h-16" name="simple-icons:cinema4d" />
+      </Fragment>
+      <Fragment slot="titleleft2">
+        Cinema4D
+      </Fragment>
+      <Fragment slot="textleft2">
+        Taking your custom experience further towards the metaverse with 
+        high-quality 3D asset creation using Cinema4D, the industry leader 
+        in rendering and 3D design. Made even more powerful with code.
+      </Fragment>
+      <Fragment slot="iconright2">
+        <Icon class="w-16 h-16" name="simple-icons:stripe" />
+      </Fragment>
+      <Fragment slot="titleright2">
+        Stripe payments
+      </Fragment>
+      <Fragment slot="textright2">
+        Streamline your payment process and boost sales with Stripe's 
+        secure payment gateway. With one-click checkout, you can 
+        provide a seamless payment experience for your customers, 
+        reducing cart abandonment and driving conversions. Benefit 
+        from Stripe's transparent pricing, and robust fraud prevention 
+        from day one for your business. For frictionless payment experiences.
+      </Fragment>      
+    </SectionTextarea>
+
+    <Integrations />
+
+  </ContainerXL>
+
+  <Container>
+    <Accordian />
+  </Container>
+
+  <Container>
+    <Cta />
+  </Container>
+  
+</Layout>

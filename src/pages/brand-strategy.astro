@@ -1,0 +1,278 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ContainerFW from "@components/container-fullwidth.astro";
+import ContainerXL from "@components/container-xl.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionmid.astro";
+import SectionEmail from "@components/sectionhead-email.astro";
+import Cta from "@components/cta-moonshot.astro";
+import SectionHeadImg from "@components/sectionhead-img.astro";
+import SectionHeadSecImg from "@components/sectionhead-img-rev.astro";
+import SectionTextarea from "@components/sectionmid-textarea.astro";
+import MoonshotHero from "@components/sectionmid-singleproduct-moonshot.astro";
+import Integrations from "@components/logos-integrations.astro";
+import GallerySlider from "@components/slider-lrg-services-brand.astro";
+import { Picture } from "@astrojs/image/components";
+import PagecoverHero from '../assets/products-sqr/complete-brand-packages.webp';
+import Pagecover from '../assets/backgrounds/balance.webp';
+import PagecoverSecondary from '../assets/backgrounds/funnel.webp';
+import CoverTextarea from '../assets/backgrounds/cubed.webp';
+import { Icon } from "astro-icon";
+import IconSrc from '../assets/aidxn/trig.svg';
+
+
+
+const pricing = [
+  
+  // branding and graphic design packages
+  // starter 
+  {  
+    name: "Brand Direction",
+    price: "$245",
+    popular: false,
+    features: [
+      "Competitive research",
+      "Best working strategies within industry",
+      "Understand your market and audience from previous ad data",
+    ],
+    button: {
+      text: "Purchase",
+      link: "#",
+    },
+  },
+  // medium
+  {
+    name: "Brand Starter",
+    price: "$245",
+    popular: false,
+    features: [
+      "2x 15-min video-call brand sessions",
+      "2x design revisions",
+      "8x unique design releases (and complete licensing)",
+    ],
+    button: {
+      text: "Purchase",
+      link: "#",
+    },
+  },
+  // large
+  {
+    name: "Brand Expansion",
+    price: "$445",
+    popular: true,
+    features: [
+      "2x 15-min video-call brand sessions",
+      "2x design revisions",
+      "16x unique design releases (must have idea to expand upon)",
+    ],
+    button: {
+      text: "Purchase",
+      link: "#",
+    },
+  },
+  // e-commerce
+  {
+    name: "Complete Brand Pack",
+    price: "$945",
+    popular: false,
+    features: [
+      "2x 15-min video-call brand sessions",
+      "2x design revisions",
+      "24x unique design releases",
+    ],
+    button: {
+      text: "Purchase",
+      link: "#",
+    },
+  },
+];
+---
+
+<Layout title="Complete Brand Design Packs + Industry Specific Strategies">
+
+
+
+  <ContainerFW>
+    <SectionEmail>
+      <Fragment slot="icon">
+        <div id="imgContainer" class="mt-1 w-16">
+          <img src={IconSrc} class="" transition:name="icon" transition:animate="morph"/>
+        </div>
+      </Fragment>
+      <Fragment slot="title">
+        Complete brand design packs + industry specific strategies.
+      </Fragment>
+      <Fragment slot="desc">
+        Effective marketing is simply no accident, not even close. We design brands that seemlessly 
+        convert their target audience. Validated brand strategy, direction and design. Ready for global scale.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={PagecoverHero}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionEmail>
+  </ContainerFW>
+
+  <ContainerXL>
+    <SectionHeadImg>
+      <Fragment slot="title">
+        Brand direction + strategy.
+      </Fragment>
+      <Fragment slot="desc">
+        Based on the Gold Coast and redefining the way businesses can manage their brand. Come back to Earth for 
+        air and remember the good old days of freelancers you can rely on. If your office is located on the Gold Coast 
+        we come directly to you, once a month to improve the speed of development. While also always being only a click away 
+        online if you're wanting to see where our work is upto, add a revision or next task.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={Pagecover}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadImg>
+  </ContainerXL>
+
+  <ContainerXL>
+    <SectionHeadSecImg>
+      <Fragment slot="title">
+        Cloud-based revisions.
+      </Fragment>
+      <Fragment slot="desc">
+        We know how important it is to create and revise hundreds of ideas quickly to find the best. Using cloud-based 
+        design software to share moodboards and ideas, we can quickly work together anywhere in the world, using Figma, 
+        to maintain blazing-fast, 2-day design turn arounds. Manage ideas and approvals online with Trello for complete 
+        transparency and peace of mind you're making the most of your monthly design work.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={PagecoverSecondary}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadSecImg>
+
+    <Integrations />
+    
+    <SectionTextarea>
+      <Fragment slot="title">Organic brand strategies.</Fragment>
+      <Fragment slot="desc">
+        Ignite your brand's online presence with Aidxn Design's SEO-friendly strategies. 
+        Experts in SEO designing brand strategies that not only captivate your audience 
+        but also rank high in search engine results with ease. From keyword mockups and 
+        to content category validation all before your brand hits the ground ensures a 
+        smooth sailing brand launch or direction shift. Driving organic traffic as a key 
+        pillar of your marketing plan.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture
+                  src={CoverTextarea}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="3:2"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+      <Fragment slot="iconleft">
+        <Icon class="w-16 h-16" name="simple-icons:googleads" />
+      </Fragment>
+      <Fragment slot="titleleft">
+        Google Search / Shopping / Display
+      </Fragment>
+      <Fragment slot="textleft">
+        Zapier's powerful automation platform works directly
+        with Velocity7. Automate tasks, synchronize data, 
+        and reduce costs. All made simple with Velocity7 
+        API connection.
+      </Fragment>
+      <Fragment slot="iconright">
+        <Icon class="w-16 h-16" name="ph:device-mobile-camera-light" />
+      </Fragment>
+      <Fragment slot="titleright">
+        Meta (FB / IG)
+      </Fragment>
+      <Fragment slot="textright">
+        All our Velocity sites are powered by Netlify's powerful, 
+        load-balancing network of servers to deliver your content 
+        to the end user faster than anyone else. Absolutely necessary
+        with the cell networks available in Australia. Take back control 
+        of your website's velocity with the speed of Velocity7 on Netlify's network.
+      </Fragment>
+      <Fragment slot="iconleft2">
+        <Icon class="w-16 h-16" name="mdi:billboard" />
+      </Fragment>
+      <Fragment slot="titleleft2">
+        Billboards and Buses
+      </Fragment>
+      <Fragment slot="textleft2">
+        Maximize your advertising effectiveness with Google Ads' 
+        conversion tracking built deeply into Velocity7. Easily 
+        track and measure conversions that matter most to your 
+        business. Gain valuable insights into customer behavior 
+        and optimize your ad strategy accordingly. With Google Ads' 
+        comprehensive conversion tracking, you can make data-driven 
+        decisions and drive higher ROI for your advertising efforts.
+      </Fragment>
+      <Fragment slot="iconright2">
+        <Icon class="w-16 h-16" name="ph:file-search-light" />
+      </Fragment>
+      <Fragment slot="titleright2">
+        AI and Automation
+      </Fragment>
+      <Fragment slot="textright2">
+        Streamline your payment process and boost sales with Stripe's 
+        secure payment gateway. With one-click checkout, you can 
+        provide a seamless payment experience for your customers, 
+        reducing cart abandonment and driving conversions. Benefit 
+        from Stripe's transparent pricing, and robust fraud prevention 
+        from day one for your business. For frictionless payment experiences.
+      </Fragment>      
+    </SectionTextarea>
+  </ContainerXL>
+
+  <Container>
+
+    <Sectionhead>
+      <Fragment slot="title">Turn Around in 14 Days.</Fragment>
+      <Fragment slot="desc"
+        >We move as fast as possible with all design work as we know it makes all the difference. 
+        Easily allowing for mockup revision and creative direction using Figma.
+      </Fragment>
+    </Sectionhead>
+
+    <MoonshotHero />
+
+  </Container>
+
+  <Container>
+    <Cta />
+  </Container>
+
+  <ContainerFW>
+    <GallerySlider />
+  </ContainerFW>
+
+</Layout>

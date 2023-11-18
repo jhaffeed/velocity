@@ -1,0 +1,96 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+import { Picture } from "@astrojs/image/components";
+import BoogieCollective from '../assets/tbc-logo-greyed.svg';
+import BallRealty from '../assets/ball-realty-greyed.svg';
+import NWFunding from '../assets/nwfunding-logo-greyed.svg';
+import RayWhite from '../assets/ray-white-greyed.svg';
+
+
+
+const features = [
+  {
+    title: "32x reduction in CPM in the Real Estate Industry.",
+    description:
+      "Maintaining their conversion results while reducing cost at the height of Covid's impact on business, helped keep this business alive.",
+    imgsrc: BallRealty,
+    imgalt: "Brand Design and strategy direction for the age of social marketing.",
+    link: "blog/ball-realty",
+    style: "outline",
+    btntxt: "Read more",
+  },
+  {
+    title: "6x improvement on AOV, in the Finance Industry.",
+    description:
+      "A blend of detailed conversion tracking steps with tailored ads to the stages thinking to help move customers quickly down the funnel.",
+    imgsrc: NWFunding,
+    imgalt: "Gold Coast's best web design and development agency with over 10 years experience.",
+    link: "blog/nwfunding",
+    style: "outline",
+    btntxt: "Read more",
+  },
+  {
+    title: "$50k in sales in one month, with $0 ad spend.",
+    description:
+      "We did this even using Wordpress and why we care deeply about speed. With over 10 years in Web Development we hate Wordpress just as much as you.",
+    imgsrc: BoogieCollective,
+    imgalt: "Ad strategy management on the Gold Coast without the giant fees.",
+    link: "blog/theboogiecollective",
+    style: "outline",
+    btntxt: "Read more",
+  },
+  {
+    title: "Animated Ad Designs within strict Brand Guidelines.",
+    description:
+      "Creating ad designs that follow a larger brand formula can be a huge challenge. The unique approach helped improve CTR's over in-house competition.",
+    imgsrc: RayWhite,
+    imgalt: "3D Video Design and Videography Production for Marketing",
+    link: "blog/raywhite",
+    style: "outline",
+    btntxt: "Read more",
+  },
+];
+---
+
+<style>
+  #fullWidth {
+  
+}
+</style>
+
+<div class="mt-16 mb-8 pt-16">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Managing brands in competitive industries.
+  </h2>
+  <p class="text-lg max-w-4xl mt-4 text-slate-600">
+    We've come to learn a thing or two about how to help different industries succeed, from real estate to finance to even promoting other digital marketing. See the exact results of how Aidxn Design and Velocity7 are improving businesses around Australia, as one of the leading Gold Coast Web Designers.
+  </p>
+</div>
+
+<div id="fullWidth">
+  <div class="grid lg:grid-cols-2 mb-16 gap-4">
+    {
+      features.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div id="card" class="bg-black hover:bg-gray-900 duration-200 w-full rounded px-4 py-8">
+            <div class="mt-1 w-48 h-36 shrink-0">
+              <img src={item.imgsrc} class="h-24 md:h-32" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-md lg:text-xl text-white mb-4">{item.title}</h3>{" "}
+              <p class="max-w-md text-xs lg:text-sm text-slate-400 mt-2 mb-6 leading-relaxed">{item.description}</p>
+              <Link
+                href={item.link || "#"}
+                block
+                style={item.style ? "primary" : "outline"}>
+                {item.btntxt || "Get Started"}
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

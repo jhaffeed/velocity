@@ -1,0 +1,179 @@
+---
+import Button from "./ui/button.astro";
+---
+<style>
+  svg{width:100%;height:100%;perspective:50px}circle{stroke:#26003A;stroke-width:8px;fill:none}.equator{stroke:#a600ff;transform:rotateZ(-20deg) rotateX(125deg)}.meridian{animation:2s linear infinite turn;transform:rotateZ(-20deg) rotateX(35deg) rotateY(var(--start))}@keyframes turn{100%{transform:rotateZ(-20deg) rotateX(35deg) rotateY(var(--end))}}
+</style>
+
+<div id="containerFlex" class="flex flex-col-reverse md:flex-row justify-start items-center my-8 md:my-24">
+  <div id="leftContainer" class="w-full md:w-3/5 pt-8">
+    <div id="imgContainer" class="mt-1 w-36">
+      <slot class="rounded" name="icon" transition:name="icon"></slot>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-6xl pr-8 font-bold lg:tracking-tight">
+      <slot name="title">Title</slot>
+    </h1>
+    <p class="text-sm lg:text-lg max-w-4xl md:pr-4 mt-8 mb-8 lg:mb-16 text-slate-600">
+      <slot name="desc">Some description goes here</slot>
+    </p>
+    
+    <div id="formContainer" class="w-full lg:max-w-2xl">
+      <h3 name="emailTitle" class="text-black text-lg md:text-2xl lg:text-3xl font-semibold mb-4">
+        Let me offer some ideas to improve your website and conversion rate.
+      </h3>
+          <!-- To make this contact form work, create your free access key from https://web3forms.com/
+          Then you will get all form submissions in your email inbox. -->
+      <form netlify
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        id="short-form-V7"
+        class="needs-validation"
+        novalidate>
+
+        <input type="hidden" name="access_key" value="1e0ffadd-2f05-471b-bbc2-36fa32793837" />
+        <!-- Create your free access key from https://web3forms.com/ -->
+        <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+        <div id="innerFormContainer" class="flex flex-col lg:flex-row gap-4 my-4">
+          <div class="my-2 w-full md:w-1/2">
+            <input
+              type="text"
+              placeholder="Full Name"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="name"
+            />
+            <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              Please provide your full name.
+            </div>
+          </div>
+          <div class="my-2 w-full lg:w-1/2">
+            <label for="phone" class="sr-only">Phone Number</label><input
+              id="phone"
+              type="number"
+              placeholder="Phone Number"
+              name="phone"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+            />
+            <div class="empty-feedback text-red-400 text-sm mt-1">
+              Please provide your phone number.
+            </div>
+            <div class="invalid-feedback text-red-400 text-sm mt-1">
+              Please provide a valid phone number.
+            </div>
+          </div>
+          <div class="mb-5">
+            <label for="website" class="sr-only">Website or Brand</label><input
+              id="website"
+              type="text"
+              placeholder="yourbrand.com/"
+              name="website"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+            />
+            <div class="empty-feedback text-red-400 text-sm mt-1">
+              Please provide an answer.
+            </div>
+            <div class="invalid-feedback text-red-400 text-sm mt-1">
+              Please provide an answer.
+            </div>
+          </div>
+        </div>
+        <Button type="submit" name="redirect" value="https://aidxn.com/success" class="py-2 py-4">Submit</Button>
+        <div id="result" class="mt-3 text-center"></div>
+      </form>
+    </div>
+  </div>
+  <div class="w-2/5 block mx-auto">
+    <div id="animationWrapper" translate="no" transition:name="meridian">
+      <svg viewBox="-500 -500 1000 1000" class="w-full">
+        <circle r="450"></circle>
+        <circle class="equator" r="450"></circle>
+        <circle class="meridian" r="450" style="--start:165deg; --end:180deg"></circle>
+        <circle class="meridian" r="450" style="--start:150deg; --end:165deg"></circle>
+        <circle class="meridian" r="450" style="--start:135deg; --end:150deg"></circle>
+        <circle class="meridian" r="450" style="--start:120deg; --end:135deg"></circle>
+        <circle class="meridian" r="450" style="--start:105deg; --end:120deg"></circle>
+        <circle class="meridian" r="450" style="--start:90deg; --end:105deg"></circle>
+        <circle class="meridian" r="450" style="--start:75deg; --end:90deg"></circle>
+        <circle class="meridian" r="450" style="--start:60deg; --end:75deg"></circle>
+        <circle class="meridian" r="450" style="--start:45deg; --end:60deg"></circle>
+        <circle class="meridian" r="450" style="--start:30deg; --end:45deg"></circle>
+        <circle class="meridian" r="450" style="--start:15deg; --end:30deg"></circle>
+        <circle class="meridian" r="450" style="--start:0deg; --end:15deg"></circle>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+
+<script is:inline>
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.classList.add("was-validated");
+    if (!form.checkValidity()) {
+      form.querySelectorAll(":invalid")[0].focus();
+      return;
+    }
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Sending...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.classList.add("text-green-500");
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.classList.add("text-red-500");
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        form.classList.remove("was-validated");
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
+</script>

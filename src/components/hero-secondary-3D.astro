@@ -1,0 +1,59 @@
+---
+import { Picture } from "@astrojs/image/components";
+import Dash from "../assets/dashboard.png";
+import Chart from "../assets/chart.png";
+import Payment from "../assets/payment.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+
+---
+
+
+
+<main class="my-32 md:my-16">
+<div id="heroSection" class="flex flex-col lg:flex-row justify-center items-center">
+  
+  <div id="leftContainer" class="w-full lg:w-3/5">
+
+    <div class="py-6">
+      <h2 style="heroTagline" class="text-2xl md:text-3xl lg:text-5xl w-full font-bold tracking-tight">
+        Interactive ads + experiences.
+      </h2>
+      <p class="text-sm lg:text-lg mt-6 pr-8 text-slate-700 w-full lg:max-w-3xl">
+        We use Three.JS, Blender, Cinema4DS and Sketchup to create beautiful yet lightweight 3D assets. 
+        Interactive ads for Google Display that outperform standard CPM's. 
+      </p>
+      
+      <div class="mt-12 flex flex-col sm:flex-row gap-3">
+        <a href="https://aidxn.com/video-ads" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800 border-2 border-transparent flex gap-1 items-center justify-center">
+          <svg viewBox="0 0 24 24" class="w-4 h-4">
+            <Icon class="text-white" name="simple-icons:cinema4d" />
+          </svg>
+          
+
+          3D Asset Design
+
+        </a>
+        <a href="https://aidxn.com/video-ads" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white border-2 border-black hover:bg-gray-100 text-black flex gap-1 items-center justify-center">
+          
+          <svg viewBox="0 0 24 24" class="w-4 h-4">
+            <Icon class="text-black" name="ph:film-slate-light" />
+          </svg>
+          
+          Video Production
+
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="rightContainer" class="w-full lg:w-2/5 z-5">
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.369/build/spline-viewer.js"></script>
+    <spline-viewer hint loading-anim url="https://prod.spline.design/W-D9GN4mRgANlfMe/scene.splinecode"></spline-viewer>
+
+  </div>
+</div>
+
+</main>
+

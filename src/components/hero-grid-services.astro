@@ -1,0 +1,119 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+
+import GraphicDesign from '../assets/aidxn/trig.svg';
+import WebDesign from '../assets/aidxn/sqr.svg';
+import Marketing from '../assets/aidxn/poly.svg';
+import VideoProd from '../assets/aidxn/hex.svg';
+
+
+const features = [
+  {
+    title: "Brand Design.",
+    description:
+      "Brand design, strategy + direction that avoid design churn. Reducing ad costs through data collection and winning SEO strategies.",
+    imgsrc: GraphicDesign,
+    imgalt: "Brand Design and strategy direction for the age of social marketing.",
+    link: "/brand-strategy",
+    style: "primary",
+    btntxt: "Design",
+    resultslink: "/blog/multi-modal-marketing",
+    resultsstyle: "outline",
+    resultsbtntxt: "Our strategies",
+  },
+  {
+    title: "Web Design + Dev.",
+    description:
+      "Award-winning web design. 10+ years experience. High-performance web design with Wordpress, Shopify, and Velocity.",
+    imgsrc: WebDesign,
+    imgalt: "Gold Coast's best web design and development agency with over 10 years experience.",
+    link: "/web-design",
+    style: "primary",
+    btntxt: "Develop",
+    resultslink: "/blog/ecommerce-design-tricks",
+    resultsstyle: "outline",
+    resultsbtntxt: "Our web design",
+  },
+  {
+    title: "Video + Interactive Ads.",
+    description:
+      "Effective video advertising is simply no accident. Beautiful interactive ad design that collect extra conversion data.",
+    imgsrc: Marketing,
+    imgalt: "Digital marketing strategy and management with award-winning experts for less, based on the Gold Coast.",
+    link: "/marketing",
+    style: "primary",
+    btntxt: "Market",
+    resultslink: "/blog/multi-modal-marketing",
+    resultsstyle: "outline",
+    resultsbtntxt: "Campaign results",
+  },
+  {
+    title: "Monthly Optimisation.",
+    description:
+      "Monthly website and marketing management. Pause anytime to guarentee results. Optimisation of KPI's and winning audience conversion.",
+    imgsrc: VideoProd,
+    imgalt: "Monthly management of website and marketing campaigns, on the Gold Coast.",
+    link: "/moonshot-plan",
+    style: "primary",
+    btntxt: "Moonshot",
+    resultslink: "/blog/multi-modal-marketing",
+    resultsstyle: "outline",
+    resultsbtntxt: "Case Studies",
+  },
+];
+---
+
+<main class="my-16 md:my-32">
+  <div id="introContainer" class="mb-4 md:mb-8">
+    <h5 class="text-sm lg:text-md text-slate-700 mb-2">
+      Services
+    </h5>
+    <h3 class="text-2xl md:text-3xl lg:text-5xl mb-4 font-bold lg:tracking-tight">
+      Design, Develop. Market, Moonshot.
+    </h3>
+    <div class="flex flex-col sm:flex-row">
+    <p class="w-full sm:w-1/2 text-sm lg:text-lg pr-6 mb-6 lg:max-w-6xl text-slate-700"> 
+       
+      Scaling brands faster by connecting the dots between your brand design and direction, 
+      website design and user experience, marketing strategy and funnels. Experienced with 
+      a range of technologies and creating end-to-end marketing campaigns that cover all ad mediums. 
+      Developing ad strategy in person with the aim to improve KPI's month-to-month with the Moonshot Plan.
+    
+    </p>
+    <p class="w-full sm:w-1/2 text-sm lg:text-lg pr-6 mb-6 lg:max-w-6xl text-slate-700"> 
+ 
+      Working with Wordpress for 10 years, Shopify and Webflow for 8 years, and specialising in web performance and 'minimal high conversion UX design' for 6 years. I began developing Velocity in 2017 as a way to combine everything I have learned about what makes a good website and make it easier for businesses to move to custom code.
+    
+    </p>
+    </div>
+  </div>
+
+  <div id="gridContainer" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
+    {
+      features.map((item) => (
+        <div class="flex items-start">
+          <div id="glass-card" class="card-padding w-full flex flex-col items-start justify-center scale-100 hover:scale-115 duration-200">
+            <div id="imgContainer" class="mt-1 w-16">
+              <img src={item.imgsrc} class="" transition:name="icon"/>
+            </div>
+            <div id="textContainer" class="w-full mt-6">
+              <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">{item.title}</h2>{" "}
+              <p class="text-slate-700 text-xs md:text-md mt-4 leading-relaxed">{item.description}</p>
+              <div class="mt-6">
+                <Link 
+                  class="mr-2 text-xs md:text-sm"
+                  href={item.link || "#"}
+                  block
+                  style={item.style ? "primary" : "outline"}>
+                  {item.btntxt || "Get Started"}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</main>

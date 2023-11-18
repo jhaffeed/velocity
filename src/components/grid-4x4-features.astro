@@ -1,0 +1,124 @@
+---
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "High Performance.",
+    description:
+      "0.2 sec pageload speed.",
+    icon: "carbon:asset",
+  },
+  {
+    title: "Conversion-Focused.",
+    description:
+      "Code developed over 5 years.",
+    icon: "ph:crosshair-light",
+  },
+  {
+    title: "Ad Tracking Built-In.",
+    description:
+      "Conversion tracking ready.",
+    icon: "ph:git-branch",
+  },
+  {
+    title: "One-Click Checkouts.",
+    description: "Simplified purchase flow.",
+    icon: "ph:number-circle-one-light",
+  },
+  {
+    title: "50+ Components.",
+    description:
+      "Create custom pages, faster.",
+    icon: "ph:codesandbox-logo-light",
+  },
+  {
+    title: "30+ Integrations.",
+    description:
+      "Manage data + automate sales.",
+    icon: "ph:package-light",
+  },
+  {
+  title: "15+ Layouts.",
+  description: "Customised to your brand.",
+  icon: "carbon:cube",
+  },
+  {
+    title: "Extend/Automate.",
+    description:
+      "Infinitely extendable w/ NPM.",
+    icon: "ph:stack",
+  },
+  {
+    title: "SEO Friendly.",
+    description: "Automatic sitemap, built-in.",
+    icon: "ph:app-window",
+  },
+  {
+    title: "Form Handling.",
+    description: "Accept + store secure leads.",
+    icon: "ph:megaphone-simple",
+  },
+  {
+    title: "3D Render for Web.",
+    description: "Build beautiful experiences.",
+    icon: "ph:game-controller",
+  },
+  {
+    title: "MDX-Powered Blog.",
+    description:
+      "Write beautiful blog posts.",
+    icon: "ph:pen-nib",
+  },
+  {
+    title: "Built-in CRM.",
+    description: "Link to your database.",
+    icon: "ph:intersect",
+  },
+  {
+    title: "Advanced Analytics.",
+    description: "Track + optimise user flow.",
+    icon: "ph:chart-pie",
+  },
+  {
+    title: "Responsive Design.",
+    description: "Deeply responsive code.",
+    icon: "ph:medium-logo-light",
+  },
+  {
+    title: "Lifetime License.",
+    description:
+      "Pay once. No hidden costs.",
+    icon: "ion:infinite",
+  },
+];
+---
+
+<main class="my-16 md:my-32">
+  <div>
+    <h5 class="text-xs md:text-sm text-center text-black uppercase mb-4">Developed over 5 years</h5>
+    <h3 class="text-2xl md:text-3xl lg:text-5xl font-bold lg:tracking-tight mb-6 text-center">Everything you need to sell more online.</h3>
+    <p class="text-center text-md md:text-lg mb-8">Reducing the cost of custom websites with over 80 components and over 30 integrations.</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-8 gap-4 md:gap-8 gap-y-4 px-4 md:px-8 py-4">
+    {
+      features.map((item) => (
+      <div id="container" class="relative group">
+        <div id="cardOuter" class="absolute -inset-1 bg-gradient-to-br from-pink-700 to-purple-700 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+        <div id="cardInner" class="relative sm:px-4 py-2 md:py-4 bg-gray-50 hover:bg-gray-100 duration-200 ring-1 ring-gray-300 rounded-lg leading-none flex items-top justify-start space-x-4">
+          <div class="flex flex-row items-center">
+            <div class="m-2 lg:m-4 bg-black rounded-full p-2 w-10 h-10 lg:w-12 lg:h-12 shrink-0">
+              <Icon class="text-white" name={item.icon} />
+            </div>
+            <div class="p-2 md:p-4">
+              <h4 class="font-semibold text-md md:text-xl">{item.title}</h4>{" "}
+              <p class="text-slate-700 group-hover:text-slate-800 mt-2 leading-relaxed text-xs md:text-sm">{item.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      ))
+    }
+  </div>
+  
+</main>

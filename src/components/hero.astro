@@ -1,0 +1,72 @@
+---
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<!-- SVG CSS and Animate for Aidxn Moving Logo -->
+<style>
+  svg{width:100%;height:100%;perspective:50px}circle{stroke:#26003A;stroke-width:8px;fill:none}.equator{stroke:#a600ff;transform:rotateZ(-20deg) rotateX(125deg)}.meridian{animation:2s linear infinite turn;transform:rotateZ(-20deg) rotateX(35deg) rotateY(var(--start))}@keyframes turn{100%{transform:rotateZ(-20deg) rotateX(35deg) rotateY(var(--end))}}
+  #spec { border-top: 0.5px #000 solid; padding: 15px 0px; }
+</style>
+
+<main class="my-8 md:my-32">
+  <div id="heroSection" class="flex flex-col-reverse md:flex-row items-center mb-8">
+    
+    <div class="text-center md:text-left mx-auto w-full  md:w-2/3 lg:w-3/5">
+
+      <div id="glassCard" class="gap-4">
+        <h1 style="heroTagline" class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl w-full max-w-5xl py-4 md:py-8 font-bold tracking-tight">
+          Website design + marketing. All-in-one.
+        </h1>
+
+        <p class="text-md lg:text-lg text-slate-700 w-full max-w-6xl">The current model of digital marketing agencies was making me hate the service that was being provided. I started a new business name and model with one-off, predictable pricing and no more endless subscriptions. For the small percentage of businesses in a stage where they are ready to scale month on month, we've still go you with no work outsourced, with our Moonshot Plan. Fixed price of $4445/month, pause anytime.</p>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-3 text-lg lg:text-xl my-8 text-slate-700 w-full max-w-5xl gap-6">
+          <li id="spec"><b>10+ years of web development</b>, specialising in UX design and pageload performance.</li>
+          <li id="spec"><b>8+ years of graphic design</b> for print and digital experiences.</li> 
+          <li id="spec"><b>6+ years of marketing mananagment</b> in over 15 industries.</li>
+        </ul>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-3">
+          <a id="conversionTrack" href="https://velocity8.aidxn.com/" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800 border-2 border-transparent flex gap-1 items-center justify-center">
+            <svg viewBox="0 0 24 24" class="w-4 h-4">
+              <Icon class="text-white" name="ph:lightning" />
+            </svg>
+
+            Velocity8 Demo
+
+          </a>
+          <a id="conversionTrack" href="https://aidxn.com/velocity" rel="noopener" class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800 border-2 border-transparent flex gap-1 items-center justify-center">
+            <svg viewBox="0 0 24 24" class="w-4 h-4">
+              <Icon class="text-white" name="ph:lightning-fill" />
+            </svg>
+
+            More info
+
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="md:w-1/3 xl:w-2/5 block mx-auto">
+      <div id="animationWrapper" translate="no" transition:name="meridian">
+        <svg viewBox="-500 -500 1000 1000" class="w-full">
+          <circle r="450"></circle>
+          <circle class="equator" r="450"></circle>
+          <circle class="meridian" r="450" style="--start:165deg; --end:180deg"></circle>
+          <circle class="meridian" r="450" style="--start:150deg; --end:165deg"></circle>
+          <circle class="meridian" r="450" style="--start:135deg; --end:150deg"></circle>
+          <circle class="meridian" r="450" style="--start:120deg; --end:135deg"></circle>
+          <circle class="meridian" r="450" style="--start:105deg; --end:120deg"></circle>
+          <circle class="meridian" r="450" style="--start:90deg; --end:105deg"></circle>
+          <circle class="meridian" r="450" style="--start:75deg; --end:90deg"></circle>
+          <circle class="meridian" r="450" style="--start:60deg; --end:75deg"></circle>
+          <circle class="meridian" r="450" style="--start:45deg; --end:60deg"></circle>
+          <circle class="meridian" r="450" style="--start:30deg; --end:45deg"></circle>
+          <circle class="meridian" r="450" style="--start:15deg; --end:30deg"></circle>
+          <circle class="meridian" r="450" style="--start:0deg; --end:15deg"></circle>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</main>

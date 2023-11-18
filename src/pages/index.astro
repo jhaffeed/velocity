@@ -1,0 +1,127 @@
+---
+import ContainerFW from "@components/container-fullwidth.astro";
+import ContainerXL from "@components/container-xl.astro";
+import Container from "@components/container.astro";
+import { Picture } from "@astrojs/image/components";
+
+import Hero from "@components/hero.astro";
+import Grid from "@components/hero-grid-services.astro";
+import Clients from "@components/grid-4x4-clients.astro";
+
+import WorksSliderBall from "@components/slider-med-works-ball.astro";
+import WorksSliderRay from "@components/slider-med-works-rw.astro";
+import WorksSliderSnacks from "@components/slider-med-works-snacks.astro";
+import WorksSliderEstem from "@components/slider-med-works-estem.astro";
+
+import HeroSecondary from "@components/slider-cases.astro";
+import SectionHeadImg from "@components/sectionhead-img.astro";
+import MoonshotSectionmid from "@components/sectionmid-singleproduct-moonshot.astro";
+import VelocitySectionmid from "@components/sectionmid-singleproduct-velocity.astro";
+
+import ContactForm from '@components/contactform-simple-row.astro';
+
+import MoonshotCover from '../assets/previous-works/moonshot-asana.webp';
+import VelocityCover from '../assets/previous-works/velocity-tsd.webp';
+import Cta from "@components/cta.astro";
+import ProductSlider from "@components/slider-lrg-services-main.astro";
+import BlogSlider from "@components/slider-content.astro";
+import Logos from "@components/logos.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Award-Winning Web Design for Gold Coast businesses">
+  <ContainerFW>
+    <Hero />
+    <Grid />
+  </ContainerFW>
+
+  <ContainerFW>
+    <WorksSliderBall />
+    <WorksSliderRay />
+    <WorksSliderSnacks />
+    <WorksSliderEstem />
+  </ContainerFW>
+
+  
+  <ContainerXL>
+  
+    <SectionHeadImg>
+      <Fragment slot="smltitle">
+        Improved web performance
+      </Fragment>
+      <Fragment slot="title">
+        Velocity, our all-in-one website theme.
+      </Fragment>
+      <Fragment slot="desc">
+        Reducing costs businesses face in the digital space such as marketing, website frameworks and hosting.
+        Velocity is an all inclusive, out-of-the-box framework to help businesses achieve more for less online. 
+        50+ components for faster development and 30+ integrations to generate more leads and sales, sooner.
+      </Fragment>
+      <Fragment slot="cover">
+        <Picture  id="glass-card-dark"
+                  src={VelocityCover}
+                  sizes="(max-width: 2000px) 2000px, 1000px"
+                  widths={[1000, 1500, 2000]}
+                  aspectRatio="1:1"
+                  background="#f2f2f2"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded duration-200 hover:shadow-sm"
+                />
+      </Fragment>
+    </SectionHeadImg>
+
+    <VelocitySectionmid />
+
+    <ContactForm />
+
+  </ContainerXL>
+
+  <ContainerFW>
+    <Clients />
+  </ContainerFW>
+
+  <ContainerFW>
+    <ProductSlider />
+  </ContainerFW>
+
+  <ContainerXL>
+
+    <SectionHeadImg>
+    <Fragment slot="smltitle">
+      Management redefined
+    </Fragment>
+    <Fragment slot="title">
+      Gold Coast based website + marketing management.
+    </Fragment>
+    <Fragment slot="desc">
+      Complete website, brand and marketing management without the lock in contracts. With the pressure to improve monthly, we generate serious results.
+      Serving a maximum of 10 clients at any time, the Moonshot Plan is designed to be outgrown when you break global markets and hire a full internal team.
+    </Fragment>
+    <Fragment slot="cover">
+      <Picture  id="glass-card-dark"
+                src={MoonshotCover}
+                sizes="(max-width: 2000px) 2000px, 1000px"
+                widths={[1000, 1500, 2000]}
+                aspectRatio="1:1"
+                background="#f2f2f2"
+                fit="cover"
+                position="center"
+                class="w-full rounded duration-200 hover:shadow-sm"
+              />
+    </Fragment>
+    </SectionHeadImg>    
+    
+    <MoonshotSectionmid />
+    <Logos />
+
+    <Cta />
+
+  </ContainerXl>
+
+  <ContainerFW>
+    <BlogSlider />
+  </ContainerFW>
+
+  
+</Layout>
